@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Chatooth</string>
-    <string name="user_guest">User Guest</string>
+    <string name="app_name">BTTest</string>
+    <string name="action_settings">Settings</string>
 </resources>
