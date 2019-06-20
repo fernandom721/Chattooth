@@ -24,6 +24,7 @@ import java.io.*
 import java.lang.Exception
 import java.math.BigInteger
 import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
 import java.util.*
 
 var devices = ArrayList<BluetoothDevice>()
@@ -190,10 +191,10 @@ class BluetoothServer(private val activity: MainActivity, private val socket: Bl
             val bytes = ByteArray(available)
             Log.v("mensaje", "Reading")
             inputStream.read(bytes, 0, available)
-            val text = String(bytes)
+            val text = String(bytes,  StandardCharsets.UTF_8);
             Log.v("mensaje", "Message recibido")
             Log.v("mensaje", text)
-            var temp = if(text.isEmpty()) bytes.toString() else{String(bytes, Charsets.UTF_8)}
+            var temp = if(text.isEmpty()) bytes.toString() else{text}
             activity.appendText("El otro: $temp")
         } catch (e: Exception) {
             Log.v("mensaje", "Cannot read data", e)
