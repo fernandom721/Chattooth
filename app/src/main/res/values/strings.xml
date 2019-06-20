@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Chatooth</string>
+    <string name="user_guest">User Guest</string>
 </resources>
